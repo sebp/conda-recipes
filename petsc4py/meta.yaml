@@ -1,0 +1,37 @@
+package:
+  name: petsc4py
+  version: 3.5.1
+
+source:
+  fn: petsc4py-3.5.1.tar.gz
+  url: https://bitbucket.org/petsc/petsc4py/downloads/petsc4py-3.5.1.tar.gz # [linux]
+  md5: fb5e7bda87dafb2ff0ee89da56873658
+
+build:
+  features:
+    - mkl
+
+requirements:
+  build:
+    - python
+    - numpy
+    - petsc
+    - mkl
+  run:
+    - python
+    - numpy
+    - petsc
+    - mkl
+
+
+test:
+  requires:
+    - mkl
+    - petsc
+  imports:
+    - petsc4py
+    - petsc4py.PETSc
+
+about:
+  home: https://bitbucket.org/petsc/petsc4py/
+  license:  BSD

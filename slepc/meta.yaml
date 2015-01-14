@@ -1,0 +1,29 @@
+package:
+  name: slepc
+  version: 3.5.3
+
+source:
+  fn: slepc-3.5.3.tar.gz
+  url: http://www.grycap.upv.es/slepc/download/download.php?filename=slepc-3.5.3.tar.gz # [linux]
+  md5: 417a691e5a756ba2a6dde7f156ff57a5
+
+build:
+  features:
+    - mkl
+
+requirements:
+  build:
+    - python
+    - petsc
+    - mkl
+  run:
+    - petsc
+    - mkl
+
+test:
+  requires:
+    - petsc4py
+
+about:
+  home: www.grycap.upv.es/slepc/
+  license: GPL3

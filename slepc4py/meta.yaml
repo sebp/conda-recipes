@@ -1,0 +1,40 @@
+package:
+  name: slepc4py
+  version: 3.5.1
+
+source:
+  fn: slepc4py-3.5.1.tar.gz
+  url: https://bitbucket.org/slepc/slepc4py/downloads/slepc4py-3.5.1.tar.gz # [linux]
+  md5: e5cc2b5e9a9037e5629cfa29cab13003
+
+build:
+  features:
+    - mkl
+
+requirements:
+  build:
+    - python
+    - numpy
+    - slepc
+    - mkl
+    - petsc4py
+  run:
+    - python
+    - numpy
+    - slepc
+    - mkl
+    - petsc4py
+
+test:
+  requires:
+    - mkl
+    - petsc4py
+    - slepc
+
+#  imports:
+#    - slepc4py
+#    - slepc4py.SLEPc
+
+about:
+  home: https://bitbucket.org/slepc/slepc4py/
+  license:  BSD
