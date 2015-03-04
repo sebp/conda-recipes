@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export LD_RUN_PATH=/lib64:$LD_RUN_PATH
 $PYTHON setup.py install
 
 # Add more build steps here, if they are necessary.
