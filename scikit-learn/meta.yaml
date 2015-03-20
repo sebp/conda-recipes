@@ -1,0 +1,70 @@
+package:
+  name: scikit-learn
+  version: "0.16b1"
+
+source:
+  fn: scikit-learn-0.16b1.tar.gz
+  url: https://pypi.python.org/packages/source/s/scikit-learn/scikit-learn-0.16b1.tar.gz
+  md5: 6f2fbb30709b62ca51f7f76bdafc62a9
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - numpy >=1.6.1
+    - scipy >=0.9
+    - atlas
+
+  run:
+    - python
+    - numpy >=1.6.1
+    - scipy >=0.9
+
+test:
+  imports:
+    - sklearn
+    - sklearn.base
+    - sklearn.cluster
+    - sklearn.cluster.bicluster
+    - sklearn.covariance
+    - sklearn.cross_validation
+    - sklearn.datasets
+    - sklearn.decomposition
+    - sklearn.dummy
+    - sklearn.ensemble
+    - sklearn.feature_extraction
+    - sklearn.feature_selection
+    - sklearn.gaussian_process
+    - sklearn.grid_search
+    - sklearn.hmm
+    - sklearn.isotonic
+    - sklearn.kernel_approximation
+    - sklearn.lda
+    - sklearn.learning_curve
+    - sklearn.linear_model
+    - sklearn.manifold
+    - sklearn.metrics
+    - sklearn.metrics.cluster
+    - sklearn.metrics.pairwise
+    - sklearn.mixture
+    - sklearn.multiclass
+    - sklearn.naive_bayes
+    - sklearn.neighbors
+    - sklearn.neural_network
+    - sklearn.cross_decomposition
+    - sklearn.preprocessing
+    - sklearn.qda
+    - sklearn.random_projection
+    - sklearn.semi_supervised
+    - sklearn.svm
+    - sklearn.tree
+    - sklearn.utils
+
+  requires:
+    - nose
+
+about:
+  home: https://github.com/scikit-learn/scikit-learn
+  license: new BSD
+  summary: 'A set of python modules for machine learning and data mining'
+
