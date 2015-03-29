@@ -8,6 +8,7 @@ source:
   md5: e5cc2b5e9a9037e5629cfa29cab13003
 
 build:
+  number: 2
   features:
     - mkl
 
@@ -31,9 +32,9 @@ test:
     - petsc4py
     - slepc
 
-#  imports:
-#    - slepc4py
-#    - slepc4py.SLEPc
+  imports:
+    - slepc4py
+    - slepc4py.SLEPc
 
 about:
   home: https://bitbucket.org/slepc/slepc4py/

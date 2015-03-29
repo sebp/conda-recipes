@@ -8,6 +8,7 @@ source:
   md5: fb5e7bda87dafb2ff0ee89da56873658
 
 build:
+  number: 2
   features:
     - mkl
 

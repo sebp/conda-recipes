@@ -8,5 +8,5 @@ export PETSC_ARCH=""
 
 python2 ./configure --prefix=$PREFIX
 
-make CFLAGS+="-fPIC"
+make
 make install
