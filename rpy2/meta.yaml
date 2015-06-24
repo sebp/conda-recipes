@@ -1,11 +1,11 @@
 package:
   name: rpy2
-  version: !!str 2.5.6
+  version: !!str 2.6.0
 
 source:
-  fn: rpy2-2.5.6.tar.gz
-  url: https://pypi.python.org/packages/source/r/rpy2/rpy2-2.5.6.tar.gz
-  md5: a36e758b633ce6aec6a5f450bfee980f
+  fn: rpy2-2.6.0.tar.gz
+  url: https://pypi.python.org/packages/source/r/rpy2/rpy2-2.6.0.tar.gz
+  md5: 679898fbc832d4f05a5efcf1a7eb1a68
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -29,9 +29,11 @@ requirements:
   build:
     - python
     - setuptools
+    - six
 
   run:
     - python
+    - six
 
 test:
   # Python imports
