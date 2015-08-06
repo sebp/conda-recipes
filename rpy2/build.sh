@@ -1,5 +1,6 @@
 #!/bin/bash
-export LD_RUN_PATH=/lib64:$LD_RUN_PATH
+# needs to find readline.h
+$PYTHON setup.py build_ext -I `dirname $R`/../include
 $PYTHON setup.py install
 
 # Add more build steps here, if they are necessary.
