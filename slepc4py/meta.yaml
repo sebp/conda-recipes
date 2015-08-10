@@ -15,13 +15,13 @@ build:
 requirements:
   build:
     - python
-    - numpy
+    - numpy 1.9*
     - slepc
     - mkl
     - petsc4py
   run:
     - python
-    - numpy
+    - numpy 1.9*
     - slepc
     - mkl
     - petsc4py
