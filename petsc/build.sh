@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export LIBRARY_PATH="$PREFIX/lib"
+
 mkdir -p $PREFIX/lib
 
 python2 ./configure --prefix=$PREFIX \

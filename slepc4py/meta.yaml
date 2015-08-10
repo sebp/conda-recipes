@@ -1,14 +1,14 @@
 package:
   name: slepc4py
-  version: 3.5.1
+  version: 3.6.0
 
 source:
-  fn: slepc4py-3.5.1.tar.gz
-  url: https://bitbucket.org/slepc/slepc4py/downloads/slepc4py-3.5.1.tar.gz # [linux]
-  md5: e5cc2b5e9a9037e5629cfa29cab13003
+  fn: slepc4py-3.6.0.tar.gz
+  url: https://bitbucket.org/slepc/slepc4py/downloads/slepc4py-3.6.0.tar.gz # [linux]
+  md5: 3d4c163dc482438684cdaa485ebf37fd
 
 build:
-  number: 2
+  number: 0
   features:
     - mkl
 

@@ -1,14 +1,14 @@
 package:
   name: petsc
-  version: 3.5.2
+  version: 3.6.1
 
 source:
-  fn: petsc-lite-3.5.2.tar.gz
-  url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.5.2.tar.gz # [linux]
-  md5: d707336a98d7cb31d843804d020edc94
+  fn: petsc-lite-3.6.1.tar.gz
+  url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.6.1.tar.gz # [linux]
+  md5: 907c01021d61d879c9db17f93afd3461
 
 build:
-  number: 2
+  number: 0
   features:
     - mkl
 

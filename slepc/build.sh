@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export LIBRARY_PATH="$PREFIX/lib"
 mkdir -p $PREFIX/lib
 
 export SLEPC_DIR=$SRC_DIR

@@ -1,14 +1,14 @@
 package:
   name: slepc
-  version: 3.5.3
+  version: 3.6.0
 
 source:
-  fn: slepc-3.5.3.tar.gz
-  url: http://www.grycap.upv.es/slepc/download/download.php?filename=slepc-3.5.3.tar.gz # [linux]
-  md5: 417a691e5a756ba2a6dde7f156ff57a5
+  fn: slepc-3.6.0.tar.gz
+  url: http://slepc.upv.es/download/download.php?filename=slepc-3.6.0.tar.gz # [linux]
+  md5: 560a634369fdab3fcaeea35c2cbab6f1
 
 build:
-  number: 2
+  number: 0
   features:
     - mkl
 
