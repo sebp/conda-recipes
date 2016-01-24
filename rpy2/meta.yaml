@@ -29,11 +29,13 @@ requirements:
     - python
     - setuptools
     - six
+    - gcc # [not win]
 
   run:
     - r
     - python
     - six
+    - libgcc # [not win]
 
 test:
   # Python imports
