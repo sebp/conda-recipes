@@ -1,5 +1,6 @@
 #!/bin/bash
 # needs to find readline.h
+$PYTHON setup.py build_clib
 $PYTHON setup.py build_ext -I `dirname $R`/../include
 $PYTHON setup.py install
 

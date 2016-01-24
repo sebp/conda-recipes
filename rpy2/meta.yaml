@@ -1,11 +1,11 @@
 package:
   name: rpy2
-  version: !!str 2.6.0
+  version: !!str 2.7.7
 
 source:
-  fn: rpy2-2.6.0.tar.gz
-  url: https://pypi.python.org/packages/source/r/rpy2/rpy2-2.6.0.tar.gz
-  md5: 679898fbc832d4f05a5efcf1a7eb1a68
+  fn: rpy2-2.7.7.tar.gz
+  url: https://pypi.python.org/packages/source/r/rpy2/rpy2-2.7.7.tar.gz
+  md5: be93432426744cdae8a0e5d2b157d371
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -63,7 +63,7 @@ test:
 
   requires:
     # Put any additional test requirements here.  For example
-    - r-ggplot2
+    - r-ggplot2 >=2.0
 
 about:
   home: http://rpy.sourceforge.net
