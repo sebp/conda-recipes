@@ -8,27 +8,21 @@ source:
   md5: e63a8e30318b5de9ffb081832e9daf30
 
 build:
-  number: 0
-  features:
-    - mkl
+  number: 1
 
 requirements:
   build:
-    - python
-    - numpy 1.9*
+    - python {{PY_VER}}*
+    - numpy 1.10*
     - petsc
-    - mkl
   run:
-    - python
-    - numpy 1.9*
+    - python {{PY_VER}}*
+    - numpy 1.10*
     - petsc
-    - mkl
-
 
 test:
   requires:
-    - mkl
-    - petsc
+    - python {{PY_VER}}*
   imports:
     - petsc4py
     - petsc4py.PETSc

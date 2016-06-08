@@ -8,22 +8,21 @@ source:
   md5: 560a634369fdab3fcaeea35c2cbab6f1
 
 build:
-  number: 0
-  features:
-    - mkl
+  number: 1
 
 requirements:
   build:
     - python
     - petsc
-    - mkl
+    - mkl-rt 11.1
   run:
     - petsc
-    - mkl
+    - mkl-rt 11.1
 
 test:
   requires:
-    - petsc4py
+    - python 3.4.*  # [py34]
+    - python 3.5.*  # [py35]
 
 about:
   home: www.grycap.upv.es/slepc/

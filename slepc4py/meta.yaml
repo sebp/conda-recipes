@@ -8,29 +8,23 @@ source:
   md5: 3d4c163dc482438684cdaa485ebf37fd
 
 build:
-  number: 0
-  features:
-    - mkl
+  number: 1
 
 requirements:
   build:
-    - python
-    - numpy 1.9*
+    - python {{PY_VER}}*
+    - numpy 1.10*
     - slepc
-    - mkl
     - petsc4py
   run:
-    - python
-    - numpy 1.9*
+    - python {{PY_VER}}*
+    - numpy 1.10*
     - slepc
-    - mkl
     - petsc4py
 
 test:
   requires:
-    - mkl
     - petsc4py
-    - slepc
 
   imports:
     - slepc4py

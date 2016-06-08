@@ -8,20 +8,19 @@ source:
   md5: 907c01021d61d879c9db17f93afd3461
 
 build:
-  number: 0
-  features:
-    - mkl
+  number: 1
 
 requirements:
   build:
     - python
-    - mkl-rt 11.1*
+    - mkl-rt 11.1
   run:
-    - mkl-rt 11.1*
+    - mkl-rt 11.1
 
 test:
   requires:
-    - mkl-rt 11.1*
+    - python 3.4.*  # [py34]
+    - python 3.5.*  # [py35]
 
 about:
   home: http://www.mcs.anl.gov/petsc/
