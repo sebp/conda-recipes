@@ -4,7 +4,7 @@ package:
 
 source:
   fn: slepc-3.6.0.tar.gz
-  url: http://slepc.upv.es/download/download.php?filename=slepc-3.6.0.tar.gz # [linux]
+  url: http://slepc.upv.es/download/download.php?filename=slepc-3.6.0.tar.gz # [not win]
   md5: 560a634369fdab3fcaeea35c2cbab6f1
 
 build:

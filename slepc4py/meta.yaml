@@ -4,7 +4,7 @@ package:
 
 source:
   fn: slepc4py-3.6.0.tar.gz
-  url: https://bitbucket.org/slepc/slepc4py/downloads/slepc4py-3.6.0.tar.gz # [linux]
+  url: https://bitbucket.org/slepc/slepc4py/downloads/slepc4py-3.6.0.tar.gz # [not win]
   md5: 3d4c163dc482438684cdaa485ebf37fd
 
 build:

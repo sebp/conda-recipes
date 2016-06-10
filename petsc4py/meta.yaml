@@ -4,7 +4,7 @@ package:
 
 source:
   fn: petsc4py-3.6.0.tar.gz
-  url: https://bitbucket.org/petsc/petsc4py/downloads/petsc4py-3.6.0.tar.gz # [linux]
+  url: https://bitbucket.org/petsc/petsc4py/downloads/petsc4py-3.6.0.tar.gz # [not win]
   md5: e63a8e30318b5de9ffb081832e9daf30
 
 build:

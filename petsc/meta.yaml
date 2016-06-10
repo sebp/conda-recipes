@@ -4,7 +4,7 @@ package:
 
 source:
   fn: petsc-lite-3.6.1.tar.gz
-  url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.6.1.tar.gz # [linux]
+  url: http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.6.1.tar.gz # [not win]
   md5: 907c01021d61d879c9db17f93afd3461
 
 build:
