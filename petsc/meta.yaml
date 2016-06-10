@@ -12,7 +12,7 @@ build:
 
 requirements:
   build:
-    - python
+    - python 2.*  # configure requires python 2
     - mkl-rt 11.1
   run:
     - mkl-rt 11.1
