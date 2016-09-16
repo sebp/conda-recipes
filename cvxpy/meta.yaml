@@ -1,11 +1,11 @@
 package:
   name: cvxpy
-  version: "0.4.2"
+  version: "0.4.5"
 
 source:
-  fn: cvxpy-0.4.2.tar.gz
-  url: https://files.pythonhosted.org/packages/e7/0b/b5d08d419314fb5f79628ec11c3615e9e93423f4980cde8046a74044b223/cvxpy-0.4.2.tar.gz
-  md5: 2c418ceb2e26acbf50ab6929af6aa8e4
+  fn: cvxpy-0.4.5.tar.gz
+  url: https://pypi.python.org/packages/f5/c9/ac3c194d4ed7046f64dfc1bcc1dc7f83d7b4eb0fdf02a84ada15a53ba7ef/cvxpy-0.4.5.tar.gz
+  md5: 6b90de7880507c0583d5e789ca4ad193
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -30,7 +30,6 @@ requirements:
   build:
     - python
     - setuptools
-    - cvxopt >=1.1.6
     - ecos >=2
     - scs >=1.1.3
     - multiprocess
@@ -43,7 +42,6 @@ requirements:
 
   run:
     - python
-    - cvxopt >=1.1.6
     - ecos >=2
     - scs >=1.1.3
     - multiprocess
@@ -66,7 +64,6 @@ test:
     - cvxpy.expressions.constants
     - cvxpy.expressions.variables
     - cvxpy.interface
-    - cvxpy.interface.cvxopt_interface
     - cvxpy.interface.numpy_interface
     - cvxpy.lin_ops
     - cvxpy.problems
