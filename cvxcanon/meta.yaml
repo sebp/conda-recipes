@@ -1,11 +1,11 @@
 package:
   name: cvxcanon
-  version: "0.1.0"
+  version: "0.1.1"
 
 source:
-  fn: CVXcanon-0.1.0.tar.gz
-  url: https://files.pythonhosted.org/packages/0d/b4/f3d9846a45b9c666c4f9f3872e55ef69e1fe685f2c8c954572fe2ea81e4e/CVXcanon-0.1.0.tar.gz
-  md5: 7488c508fb99d92d94dd87d159f36ca2
+  fn: CVXcanon-0.1.1.tar.gz
+  url: https://pypi.python.org/packages/9e/e6/63eb6e7dca5dcb723429e65b456d0e3638976e63f6696b7eb48fee3a491d/CVXcanon-0.1.1.tar.gz
+  md5: 433a38b55058c5ec1a156a75a7d7308e
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -32,6 +32,7 @@ requirements:
     - setuptools
     - numpy
     - scipy
+    - gcc
 
   run:
     - python
