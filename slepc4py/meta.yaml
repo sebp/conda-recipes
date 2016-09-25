@@ -1,24 +1,28 @@
+{% set name = "slepc4py" %}
+{% set version = "3.7.0" %}
+{% set sha256 = "5836334ec62f007b0e527c3d63577a43fee3c870c80df23256c55521ad6f4cc6" %}
+
 package:
-  name: slepc4py
-  version: 3.6.0
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: slepc4py-3.6.0.tar.gz
-  url: https://bitbucket.org/slepc/slepc4py/downloads/slepc4py-3.6.0.tar.gz # [not win]
-  md5: 3d4c163dc482438684cdaa485ebf37fd
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://bitbucket.org/slepc/slepc4py/downloads/{{ name }}-{{ version }}.tar.gz # [not win]
+  sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
     - python {{PY_VER}}*
-    - numpy 1.10*
+    - numpy x.x
     - slepc
     - petsc4py
   run:
     - python {{PY_VER}}*
-    - numpy 1.10*
+    - numpy x.x
     - slepc
     - petsc4py
 

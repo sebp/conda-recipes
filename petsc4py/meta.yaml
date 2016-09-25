@@ -1,23 +1,27 @@
+{% set name = "petsc4py" %}
+{% set version = "3.7.0" %}
+{% set sha256 = "e1fda7a68264c3eca2014f253efe4f306fa91d6dab65546764788bd7ad8518c6" %}
+
 package:
-  name: petsc4py
-  version: 3.6.0
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: petsc4py-3.6.0.tar.gz
-  url: https://bitbucket.org/petsc/petsc4py/downloads/petsc4py-3.6.0.tar.gz # [not win]
-  md5: e63a8e30318b5de9ffb081832e9daf30
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://bitbucket.org/petsc/petsc4py/downloads/{{ name }}-{{ version }}.tar.gz # [not win]
+  sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
     - python {{PY_VER}}*
-    - numpy 1.10*
+    - numpy x.x
     - petsc
   run:
     - python {{PY_VER}}*
-    - numpy 1.10*
+    - numpy x.x
     - petsc
 
 test:

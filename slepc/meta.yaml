@@ -1,14 +1,18 @@
+{% set name = "slepc" %}
+{% set version = "3.7.2" %}
+{% set sha256 = "09bd88a6023f39aa91edf55f24be1c8b9fdcfebb952539af0292aae69985741f" %}
+
 package:
-  name: slepc
-  version: 3.6.0
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: slepc-3.6.0.tar.gz
-  url: http://slepc.upv.es/download/download.php?filename=slepc-3.6.0.tar.gz # [not win]
-  md5: 560a634369fdab3fcaeea35c2cbab6f1
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: http://slepc.upv.es/download/download.php?filename={{ name }}-{{ version }}.tar.gz # [not win]
+  sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
