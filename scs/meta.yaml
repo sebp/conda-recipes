@@ -6,9 +6,9 @@ source:
   fn: scs-1.2.6.tar.gz
   url: https://files.pythonhosted.org/packages/94/b0/7517c1113c121db1b9cc19a381f28fc915294eaa61f61e0a3502746dfa88/scs-1.2.6.tar.gz
   md5: 3eaa04ffa76aaf27dc8a8e608c6a9f12
-#  patches:
+  patches:
    # List any patch files here
-   # - fix.patch
+    - blas_mkl.patch
 
 build:
   # noarch_python: True
@@ -39,9 +39,10 @@ requirements:
     - numpy x.x
     - scipy >=0.13.2
 
-# test:
+test:
   # Python imports
-  # imports:
+  imports:
+    - scs
 
   # commands:
     # You can put test commands to be run here.  Use this to test that the
