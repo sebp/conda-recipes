@@ -1,29 +1,26 @@
-{% set version = "2.8.2" %}
+{% set name = "rpy2" %}
+{% set version = "2.8.3" %}
+{% set sha256 = "24c2ea1c0d7321e6913d5d185efa19f29e920ff8e8afbc5c757f894f61c96873" %}
 
 package:
-  name: rpy2
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: rpy2-{{ version }}.tar.gz
-  url: https://pypi.python.org/packages/49/93/1e249b17f1b76aa846da2ad6202cde34c3f0954cd5bed11c14c8f13f33ab/rpy2-{{ version }}.tar.gz
-  md5: 729946166b43103db7697e69db8c5c45
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 #  patches:
    # List any patch files here
    # - fix.patch
 
 build:
+  number: 0
   # This is required to make R link correctly on Linux.
   rpaths:
       - lib/R/lib/
       - lib
-
-  #preserve_egg_dir: True
-
-
-  # If this is a new build for the same version, increment the build
-  # number. If you do not include this key, it defaults to 0.
-  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
