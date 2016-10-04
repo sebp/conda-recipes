@@ -14,7 +14,7 @@ source:
   fn: {{ name }}_{{ version }}.tar.gz
   url:
     - http://cran.r-project.org/src/contrib/{{ name }}_{{ version }}.tar.gz
-    - http://cran.r-project.org/src/contrib/Archive/fda/{{ name }}_{{ version }}.tar.gz
+    - http://cran.r-project.org/src/contrib/Archive/{{ name }}/{{ name }}_{{ version }}.tar.gz
   sha256: {{ sha256 }}
   # patches:
    # List any patch files here
