@@ -1,0 +1,78 @@
+{% set name = "corrplot" %}
+# Note that conda versions cannot contain -, so any -'s in the version have
+# been replaced with _'s.
+{% set version = "0.77" %}
+{% set sha256 = "54b66ff995eaf2eee3f3002509c6f27bb5bd970b0abde41893ed9387e93828d3" %}
+
+package:
+  name: r-{{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}_{{ version }}.tar.gz
+  url:
+    - http://cran.r-project.org/src/contrib/{{ name }}_{{ version }}.tar.gz
+    - http://cran.r-project.org/src/contrib/Archive/{{ name }}/{{ name }}_{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+  # patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  number: 0
+
+  # This is required to make R link correctly on Linux.
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+# Suggests: seriation, knitr, Cairo, testthat
+requirements:
+  build:
+    - r-base
+
+  run:
+    - r-base
+
+test:
+  commands:
+    # You can put additional test commands to be run here.
+    - $R -e "library('corrplot')" # [not win]
+    - "\"%R%\" -e \"library('corrplot')\"" # [win]
+
+  # You can also put a file called run_test.py, run_test.sh, or run_test.bat
+  # in the recipe that will be run at test time.
+
+  # requires:
+    # Put any additional test requirements here.
+
+about:
+  home: https://github.com/taiyun/corrplot
+  license: GPL
+  summary: A graphical display of a correlation matrix or general matrix. It also contains some
+    algorithms to do matrix reordering.
+  license_family: GPL3
+
+# The original CRAN metadata for this package was:
+
+# Package: corrplot
+# Type: Package
+# Title: Visualization of a Correlation Matrix
+# Version: 0.77
+# Author: Taiyun Wei, Viliam Simko
+# Suggests: seriation, knitr, Cairo, testthat
+# Maintainer: Taiyun Wei <weitaiyun@gmail.com>
+# Description: A graphical display of a correlation matrix or general matrix. It also contains some algorithms to do matrix reordering.
+# License: GPL
+# URL: https://github.com/taiyun/corrplot
+# BugReports: https://github.com/taiyun/corrplot/issues
+# VignetteBuilder: knitr
+# RoxygenNote: 5.0.1
+# NeedsCompilation: no
+# Packaged: 2016-04-20 09:30:20 UTC; taiyun.wei
+# Repository: CRAN
+# Date/Publication: 2016-04-21 08:20:39
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
