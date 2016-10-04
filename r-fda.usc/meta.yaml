@@ -1,0 +1,92 @@
+{% set name = "fda.usc" %}
+# Note that conda versions cannot contain -, so any -'s in the version have
+# been replaced with _'s.
+{% set version = "1.2.3" %}
+{% set sha256 = "2f92e74a9a12b7f37746f18a216f006eb6826228b1362fe53c8b441dbfa791ca" %}
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
+
+package:
+  name: r-{{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}_{{ version }}.tar.gz
+  url:
+    - http://cran.r-project.org/src/contrib/{{ name }}_{{ version }}.tar.gz
+    - http://cran.r-project.org/src/contrib/Archive/fda.usc/{{ name }}_{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+  # patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  number: 0
+  # This is required to make R link correctly on Linux.
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+
+requirements:
+  build:
+    - r-base
+    - r-mass
+    - r-fda
+    - r-mgcv
+    - r-rpart
+    - posix               # [win]
+    - {{native}}toolchain # [win]
+    - gcc                 # [not win]
+
+  run:
+    - r-base
+    - r-mass
+    - r-fda
+    - r-mgcv
+    - r-rpart
+
+test:
+  commands:
+    # You can put additional test commands to be run here.
+    - $R -e "library('fda.usc')" # [not win]
+    - "\"%R%\" -e \"library('fda.usc')\"" # [win]
+
+  # You can also put a file called run_test.py, run_test.sh, or run_test.bat
+  # in the recipe that will be run at test time.
+
+  # requires:
+    # Put any additional test requirements here.
+
+about:
+  home: http://www.jstatsoft.org/v51/i04/
+  license: GPL-2
+  summary: Routines for exploratory and descriptive analysis of functional data such as depth
+    measurements, atypical curves detection, regression models, supervised classification,
+    unsupervised classification and functional analysis of variance.
+  license_family: GPL2
+
+# The original CRAN metadata for this package was:
+
+# Package: fda.usc
+# Type: Package
+# Title: Functional Data Analysis and Utilities for Statistical Computing
+# Version: 1.2.3
+# Date: 2016-04-28
+# Authors@R: c(person("Manuel Febrero Bande",role="aut", email = "manuel.febrero@usc.es"), person("Manuel Oviedo de la Fuente",role=c("aut","cre"), email="manuel.oviedo@usc.es"), person("Pedro Galeano",role="ctb"), person("Alicia Nieto",role="ctb"), person("Eduardo Garcia-Portugues",role="ctb"))
+# Depends: R (>= 2.10), fda, splines, MASS, mgcv, rpart
+# Imports: methods, grDevices, graphics, utils, stats
+# Description: Routines for exploratory and descriptive analysis of functional data such as depth measurements, atypical curves detection, regression models, supervised classification, unsupervised classification and functional analysis of variance.
+# License: GPL-2
+# URL: http://www.jstatsoft.org/v51/i04/
+# LazyLoad: yes
+# Author: Manuel Febrero Bande [aut], Manuel Oviedo de la Fuente [aut, cre], Pedro Galeano [ctb], Alicia Nieto [ctb], Eduardo Garcia-Portugues [ctb]
+# Maintainer: Manuel Oviedo de la Fuente <manuel.oviedo@usc.es>
+# NeedsCompilation: yes
+# Repository: CRAN
+# Packaged: 2016-04-28 10:20:57 UTC; moviedo
+# Date/Publication: 2016-04-28 15:55:24
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
