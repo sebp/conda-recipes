@@ -1,0 +1,84 @@
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
+
+package:
+  name: r-gamm4
+  # Note that conda versions cannot contain -, so any -'s in the version have
+  # been replaced with _'s.
+  version: "0.2_4"
+
+source:
+  fn: gamm4_0.2-4.tar.gz
+  url:
+    - http://cran.r-project.org/src/contrib/gamm4_0.2-4.tar.gz
+    - http://cran.r-project.org/src/contrib/Archive/gamm4/gamm4_0.2-4.tar.gz
+
+
+  # You can add a hash for the file here, like md5 or sha1
+  # md5: 49448ba4863157652311cc5ea4fea3ea
+  # sha1: 3bcfbee008276084cbb37a2b453963c61176a322
+  # patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+  # This is required to make R link correctly on Linux.
+  rpaths:
+    - lib/R/lib/
+    - lib/
+
+
+requirements:
+  build:
+    - r-base
+    - r-matrix
+    - r-lme4 >=0.999375_31
+    - r-mgcv >=1.7_23
+
+  run:
+    - r-base
+    - r-matrix
+    - r-lme4 >=0.999375_31
+    - r-mgcv >=1.7_23
+
+test:
+  commands:
+    # You can put additional test commands to be run here.
+    - $R -e "library('gamm4')" # [not win]
+    - "\"%R%\" -e \"library('gamm4')\"" # [win]
+
+  # You can also put a file called run_test.py, run_test.sh, or run_test.bat
+  # in the recipe that will be run at test time.
+
+  # requires:
+    # Put any additional test requirements here.
+
+about:
+  #home:
+  license: GPL (>= 2)
+  summary: Estimate generalized additive mixed models via a version of function gamm() from 'mgcv',
+    using 'lme4' for estimation.
+  license_family: GPL3
+
+# The original CRAN metadata for this package was:
+
+# Package: gamm4
+# Version: 0.2-4
+# Author: Simon Wood, Fabian Scheipl
+# Maintainer: Simon Wood <simon.wood@r-project.org>
+# Title: Generalized Additive Mixed Models using 'mgcv' and 'lme4'
+# Description: Estimate generalized additive mixed models via a version of function gamm() from 'mgcv', using 'lme4' for estimation.
+# Depends: R (>= 2.9.0), methods, Matrix, lme4 (>= 0.999375-31), mgcv (>= 1.7-23)
+# License: GPL (>= 2)
+# NeedsCompilation: no
+# Packaged: 2016-09-17 10:12:48 UTC; sw283
+# Repository: CRAN
+# Date/Publication: 2016-09-17 18:03:27
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
