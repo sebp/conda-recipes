@@ -1,11 +1,11 @@
 package:
   name: cvxpy
-  version: "0.4.8"
+  version: "0.4.9"
 
 source:
-  fn: cvxpy-0.4.8.tar.gz
-  url: https://pypi.python.org/packages/c3/92/b209cc278c5b5b23667524fb8f4ac9ece39248bdf65380406e407ead50ef/cvxpy-0.4.8.tar.gz
-  sha256: 32c35935d5d9727d777eeaacb70369a9f3db835fd1e524ba59efc5946a3c87b0
+  fn: cvxpy-0.4.9.tar.gz
+  url: https://pypi.python.org/packages/ee/6e/6966596631c99a2d4f8c42b97dbaecf4ff81e090fc9bfe0937d98e5d0502/cvxpy-0.4.9.tar.gz
+  sha256: 9f9ec16d9bd607e76fe9e67041ffc2bb12767f1b3e40f19408010b2d1d0f1c24
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -24,7 +24,7 @@ build:
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
-  number: 2
+  number: 0
 
 requirements:
   build:
