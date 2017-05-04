@@ -1,11 +1,11 @@
 package:
   name: multiprocess
-  version: "0.70.4"
+  version: "0.70.5"
 
 source:
-  fn: multiprocess-0.70.4.tgz
-  url: https://files.pythonhosted.org/packages/0b/24/21184ba071263e99655452680943701e5aeb4ac7c25bd8691b150aef64c4/multiprocess-0.70.4.tgz
-  md5: 587596fff965e66a4f474a283a72f180
+  fn: multiprocess-0.70.5.zip
+  url: https://pypi.python.org/packages/65/03/bd8ac79948049b5a0f7ee5f2642f76dbb2d9cb83cc5433dfb2112f89d69a/multiprocess-0.70.5.zip
+  md5: bfe394368b1d98192f1f62cc0060be20
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -30,11 +30,11 @@ requirements:
   build:
     - python
     - setuptools
-    - dill >=0.2.5
+    - dill >=0.2.6
 
   run:
     - python
-    - dill >=0.2.5
+    - dill >=0.2.6
 
 test:
   # Python imports
