@@ -1,11 +1,15 @@
+{% set name = "CVXcanon" %}
+{% set version = "0.1.1" %}
+{% set md5sum = "433a38b55058c5ec1a156a75a7d7308e" %}
+
 package:
-  name: cvxcanon
-  version: "0.1.1"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: CVXcanon-0.1.1.tar.gz
-  url: https://pypi.python.org/packages/9e/e6/63eb6e7dca5dcb723429e65b456d0e3638976e63f6696b7eb48fee3a491d/CVXcanon-0.1.1.tar.gz
-  md5: 433a38b55058c5ec1a156a75a7d7308e
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  md5: {{ md5sum }}
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -24,19 +28,19 @@ build:
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
-  number: 2
+  number: 3
 
 requirements:
   build:
-    - python
+    - python {{ python }}
     - setuptools
-    - numpy x.x
+    - numpy {{ numpy }}
     - scipy
-    - gcc
+    - gcc # [not win]
 
   run:
-    - python
-    - numpy x.x
+    - python {{ python }}
+    - numpy {{ numpy }}
     - scipy
 
 # test:
