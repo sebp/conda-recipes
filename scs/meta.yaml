@@ -1,11 +1,15 @@
+{% set name = "scs" %}
+{% set version = "1.2.6" %}
+{% set md5sum = "3eaa04ffa76aaf27dc8a8e608c6a9f12" %}
+
 package:
-  name: scs
-  version: "1.2.6"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: scs-1.2.6.tar.gz
-  url: https://files.pythonhosted.org/packages/94/b0/7517c1113c121db1b9cc19a381f28fc915294eaa61f61e0a3502746dfa88/scs-1.2.6.tar.gz
-  md5: 3eaa04ffa76aaf27dc8a8e608c6a9f12
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  md5: {{ md5sum }}
   patches:
    # List any patch files here
     - blas_mkl.patch
@@ -24,19 +28,19 @@ build:
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
-  number: 3
+  number: 4
 
 requirements:
   build:
-    - python
+    - python {{ python }}
     - setuptools
-    - numpy x.x
+    - numpy {{ numpy }}
     - scipy >=0.13.2
     - gcc
 
   run:
-    - python
-    - numpy x.x
+    - python {{ python }}
+    - numpy {{ numpy }}
     - scipy >=0.13.2
 
 test:
