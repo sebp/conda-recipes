@@ -1,6 +1,6 @@
 {% set name = "cvxpy" %}
-{% set version = "0.4.10" %}
-{% set sha256 = "3f5112bd42855943298cf2d85d2a42832e7ebdaf55e053a9e3d2db52a46f001b" %}
+{% set version = "0.4.11" %}
+{% set sha256 = "7523651f2c9a7a8f3b8e87038d6869c8d7f2bfa74dd3aadc71735f07c2f6eed2" %}
 
 package:
   name: {{ name|lower }}
