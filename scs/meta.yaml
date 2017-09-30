@@ -1,6 +1,6 @@
 {% set name = "scs" %}
-{% set version = "1.2.6" %}
-{% set md5sum = "3eaa04ffa76aaf27dc8a8e608c6a9f12" %}
+{% set version = "1.2.7" %}
+{% set sha256 = "e284517e31bd8aac2e1e022376c46bade26d55ce4ef078cf796a9e70ab2b2433" %}
 
 package:
   name: {{ name|lower }}
@@ -9,10 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  md5: {{ md5sum }}
-  patches:
-   # List any patch files here
-    - blas_mkl.patch
+  sha256: {{ sha256 }}
 
 build:
   # noarch_python: True
@@ -36,7 +33,7 @@ requirements:
     - setuptools
     - numpy {{ numpy }}
     - scipy >=0.13.2
-    - gcc
+    - {{ compiler('c') }}
 
   run:
     - python {{ python }}
