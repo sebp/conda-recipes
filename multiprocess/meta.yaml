@@ -1,16 +1,20 @@
+{% set name = "multiprocess" %}
+{% set version = "0.70.5" %}
+{% set sha256 = "c4c196f3c4561dc1d78139c3e73709906a222d2fc166ef3eef895d8623df7267" %}
+
 package:
-  name: multiprocess
-  version: "0.70.5"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: multiprocess-0.70.5.zip
-  url: https://pypi.python.org/packages/65/03/bd8ac79948049b5a0f7ee5f2642f76dbb2d9cb83cc5433dfb2112f89d69a/multiprocess-0.70.5.zip
-  md5: bfe394368b1d98192f1f62cc0060be20
+  fn: {{ name }}-{{ version }}.zip
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.zip
+  sha256: {{ sha256 }}
 #  patches:
    # List any patch files here
    # - fix.patch
 
-# build:
+build:
   # noarch_python: True
   # preserve_egg_dir: True
   # entry_points:
@@ -24,13 +28,14 @@ source:
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
-  # number: 1
+  number: 1
 
 requirements:
   build:
     - python
     - setuptools
     - dill >=0.2.6
+    - {{ compiler('c') }}
 
   run:
     - python
